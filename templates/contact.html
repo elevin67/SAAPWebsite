@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Get Involved</title>
+{% endblock %}
+
+{% block body %}
+  <p>This is the Get Involved page</p><br>
+  <form method='POST'>
+    <label>Name: </label><input type='text' name='name'><br>
+    <label>Email: </label><input type='email' name='email'><br>
+    <p>Select what you are interested in and we will add you to our mailing list.</p><br>
+    <input type='checkbox' name='discuss' value='discuss'><label>Joining discussion</label><br>
+    <input type='checkbox' name='leading' value='leading'><label>Get training to help lead seminars</label><br>
+    <input type='checkbox' name='intouch' value='intouch'><label>Stay in touch with the SAAP</label><br>
+    <button type='submit'>Get Involved</button>
+  </form>
+{% endblock %}
