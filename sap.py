@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, url_for, redirect
 from database import Database
+import os
 
 app = Flask(__name__)
 app.config.from_pyfile('server.cfg')
@@ -40,6 +41,7 @@ def contact():
             intouch = request.form['intouch']
             interests += intouch
         print interests
+        os.system("mail -s "+name+email+interests+" elevin@macalester.edu")
         db.create(name,email,interests)
         return redirect(url_for('home'))
 
